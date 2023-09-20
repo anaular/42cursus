@@ -6,7 +6,7 @@
 #    By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 17:53:41 by anaular           #+#    #+#              #
-#    Updated: 2023/09/20 18:06:34 by anaular          ###   ########.fr        #
+#    Updated: 2023/09/20 18:59:23 by anaular          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Werror -Wextra
 NAME = libft.a
 
 SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
-ft_strlen.c\
+ft_strlen.c ft_strlcpy.c\
 ft_memset.c ft_bzero.c ft_memcpy.c
 
 
