@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:02:56 by anaular           #+#    #+#             */
-/*   Updated: 2023/09/21 19:01:54 by anaular          ###   ########.fr       */
+/*   Updated: 2023/09/22 11:15:22 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void		*ft_memset(void *b, int c, size_t len);
 void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
-
+char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		ft_strrchr(const char *s, int c);
 char		ft_strchr(const char *s, int c);
 size_t		ft_strlen(const char *s);
