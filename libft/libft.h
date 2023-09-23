@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:02:56 by anaular           #+#    #+#             */
-/*   Updated: 2023/09/22 12:18:08 by anaular          ###   ########.fr       */
+/*   Updated: 2023/09/23 10:54:17 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void		ft_bzero(void *s, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		ft_strrchr(const char *s, int c);
 char		ft_strchr(const char *s, int c);
+char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
