@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:02:56 by anaular           #+#    #+#             */
-/*   Updated: 2023/09/23 10:54:17 by anaular          ###   ########.fr       */
+/*   Updated: 2023/09/25 09:27:57 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <unistd.h> 
 # include <stdlib.h>
 
-int			ft_isalpha(char c);
+int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
 int			ft_isascii(int c);
@@ -32,11 +32,10 @@ void		*ft_memcpy(void *dst, const void *src, size_t n);
 void		*ft_memchr(const void *s, int c, size_t n);
 void		ft_bzero(void *s, size_t n);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
-char		ft_strrchr(const char *s, int c);
-char		ft_strchr(const char *s, int c);
+char		*ft_strrchr(const char *s, int c);
+char		*ft_strchr(const char *s, int c);
 char		*ft_strdup(const char *s);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
 #endif
-

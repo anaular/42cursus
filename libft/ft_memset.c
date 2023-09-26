@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:58:17 by anaular           #+#    #+#             */
-/*   Updated: 2023/09/20 17:58:20 by anaular          ###   ########.fr       */
+/*   Updated: 2023/09/25 09:15:13 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memset(void *b, int c, size_t len)
 	i = 0;
 	while (i < len)
 	{
-		((unsigned char *)b)[i] = (unsigned char)c;
+		((unsigned char *)b)[i] = c;
 		i++;
 	}
-	return (0);
+	return (b);
 }

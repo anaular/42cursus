@@ -6,13 +6,13 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 19:07:23 by anaular           #+#    #+#             */
-/*   Updated: 2023/09/20 19:18:53 by anaular          ###   ########.fr       */
+/*   Updated: 2023/09/24 12:39:25 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 	size_t	s;

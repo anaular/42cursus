@@ -6,7 +6,7 @@
 #    By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 17:53:41 by anaular           #+#    #+#              #
-#    Updated: 2023/09/23 19:11:25 by anaular          ###   ########.fr        #
+#    Updated: 2023/09/24 12:29:57 by anaular          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,17 +34,14 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	@$(LIB) $(NAME) $(OBJ)
 	@ranlib $(NAME)
-
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $^
-
 norma:	$(SRC)
 	norminette $(SRC)
 normx:	$(INCLUDE)
 	@norminette -R CheckForbiddenSourceHeader $(INCLUDE)
 test: main.c $(NAME)
 	@$(CC) $(CCFLAGS) main.c $(NAME) && ./a.out
-
 clean:
 	@$(RM) $(OBJ)
 	@echo "Borrado todos los .o"
