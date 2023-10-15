@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:02:56 by anaular           #+#    #+#             */
-/*   Updated: 2023/10/14 19:49:06 by anaular          ###   ########.fr       */
+/*   Updated: 2023/10/15 23:09:36 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ char		*ft_strrchr(const char *s, int c);
 char		*ft_strchr(const char *s, int c);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char		*ft_strdup(const char *s);
+char		**ft_split(char const *str, char c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
