@@ -6,7 +6,7 @@
 /*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 18:02:56 by anaular           #+#    #+#             */
-/*   Updated: 2023/10/15 23:09:36 by anaular          ###   ########.fr       */
+/*   Updated: 2023/10/16 21:52:58 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,14 @@
 
 # include <unistd.h> 
 # include <stdlib.h>
+
+# define FT_MAX_UI	(unsigned int) (~0L)
+# define FT_MAX_I	(int)(FT_MAX_UI >> l)
+# define FT_MIN_I	(int)(~FT_MAX_I)
+
+#define FT_MAX_UL	(unsigned long)(~0L)
+#define FT_MAX_L	(long)(FT_MAX_UL >> l)
+#define FT_MIN_L	(long)(~FT_MAX_L)
 
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
