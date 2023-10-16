@@ -6,7 +6,7 @@
 #    By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/20 17:53:41 by anaular           #+#    #+#              #
-#    Updated: 2023/10/15 23:09:06 by anaular          ###   ########.fr        #
+#    Updated: 2023/10/16 21:47:42 by anaular          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,9 +23,10 @@ ft_putnbr_fd.c ft_putendl_fd.c ft_split.c\
 ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strnstr.c\
 ft_putstr_fd.c ft_strmapi.c ft_memcmp.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memchr.c\
 ft_putchar_fd.c ft_striteri.c ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c ft_itoa.c
-
-
+##BSRC =
+##BSRCS= $(addsufic _bonus.c, ${BSRC})
 OBJ = $(SRC:.c=.o)
+##BOBJS = ${BSRCS:.c=.o}
 INCLUDE = libft.h
 
 
@@ -35,6 +36,9 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	@$(LIB) $(NAME) $(OBJ)
 	@ranlib $(NAME)
+##bonus: ${BOBJS}
+	${LIB}${NAME}${BOBJS}
+	@ranlib ${NAME}
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $^
 norma:	$(SRC)
@@ -51,4 +55,4 @@ fclean: clean
 	@echo " Borrado todos los .o y $(NAME)"
 re: fclean all
 	@echo " Borrado todo y creado el $(NAME)"
-.PHONY: norma test clean fclean re all
+.PHONY: norma test bonus clean fclean re all
