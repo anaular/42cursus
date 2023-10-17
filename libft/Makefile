@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+         #
+#    By: anaular <anaular@student.42madrid.>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/09/20 17:53:41 by anaular           #+#    #+#              #
-#    Updated: 2023/10/16 21:47:42 by anaular          ###   ########.fr        #
+#    Created: 2023/10/17 18:33:09 by anaular           #+#    #+#              #
+#    Updated: 2023/10/17 20:30:20 by anaular          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,14 @@ CFLAGS = -Wall -Werror -Wextra
 
 NAME = libft.a
 
-SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_atoi.c\
-ft_putnbr_fd.c ft_putendl_fd.c ft_split.c\
+SRC = ft_strtrim.c ft_memmove.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_atoi.c\
+ft_substr.c ft_strjoin.c ft_calloc.c ft_putnbr_fd.c ft_putendl_fd.c ft_split.c\
 ft_strlen.c ft_strlcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strncmp.c ft_strnstr.c\
 ft_putstr_fd.c ft_strmapi.c ft_memcmp.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memchr.c\
 ft_putchar_fd.c ft_striteri.c ft_toupper.c ft_tolower.c ft_calloc.c ft_strdup.c ft_itoa.c
-##BSRC =
-##BSRCS= $(addsufic _bonus.c, ${BSRC})
-OBJ = $(SRC:.c=.o)
-##BOBJS = ${BSRCS:.c=.o}
-INCLUDE = libft.h
 
+OBJ = $(SRC:.c=.o)
+INCLUDE = libft.h
 
 all: $(NAME)
 	@echo "Todo OK!"
@@ -36,17 +33,8 @@ all: $(NAME)
 $(NAME): $(OBJ) $(INCLUDE)
 	@$(LIB) $(NAME) $(OBJ)
 	@ranlib $(NAME)
-##bonus: ${BOBJS}
-	${LIB}${NAME}${BOBJS}
-	@ranlib ${NAME}
 %.o: %.c
 	@$(CC) $(CFLAGS) -c -o $@ $^
-norma:	$(SRC)
-	norminette $(SRC)
-normx:	$(INCLUDE)
-	@norminette -R CheckForbiddenSourceHeader $(INCLUDE)
-test: main.c $(NAME)
-	@$(CC) $(CCFLAGS) main.c $(NAME) && ./a.out
 clean:
 	@$(RM) $(OBJ)
 	@echo "Borrado todos los .o"
