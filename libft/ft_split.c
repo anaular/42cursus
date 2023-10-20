@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anaular <anaular@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: anaular <anaular@student.42madrid.>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 23:11:39 by anaular           #+#    #+#             */
-/*   Updated: 2023/10/16 20:25:13 by anaular          ###   ########.fr       */
+/*   Created: 2023/10/20 21:00:41 by anaular           #+#    #+#             */
+/*   Updated: 2023/10/20 22:45:21 by anaular          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
-static int	count_words(const char *str, char c)
+static int	ft_countw(char *str, char c)
 {
 	int	i;
 	int	trigger;
@@ -21,7 +20,7 @@ static int	count_words(const char *str, char c)
 	trigger = 0;
 	while (*str)
 	{
-		if (*str != c && trigger == 0)
+		if ((*str != c && trigger == 0))
 		{
 			trigger = 1;
 			i++;
@@ -31,45 +30,59 @@ static int	count_words(const char *str, char c)
 		str++;
 	}
 	return (i);
-}
+}	
 
-static char	*word_dup(const char *str, int start, int finish)
+static char	**ft_free(char **str)
 {
-	char	*word;
-	int		i;
+	size_t	i;
 
 	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (0);
+}
+
+static int	wordalloc(char **tab, char *str, char c)
+{
+	int	i;
+	int	j;
+	int	words;
+
+	i = 0;
+	words = 0;
+	while (str[i])
+	{
+		if (str[i] == c)
+			i++;
+		else
+		{
+			j = 0;
+			while ((str[i + j] != c) && (str[i + j]))
+				j++;
+			tab[words] = ft_substr(str, i, j);
+			if (tab[words] == 0)
+				return (ft_free(tab), 0);
+			i = i + j;
+			words++;
+		}
+	}
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		index;
 	char	**split;
 
-	split = malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !split)
+	if (!s)
 		return (0);
-	i = 0;
-	j = 0;
-	index = -1;
-	while (i <= ft_strlen(s))
-	{
-		if (s[i] != c && index < 0)
-			index = i;
-		else if ((s[i] == c || i == ft_strlen(s)) && index >= 0)
-		{
-			split[j++] = word_dup(s, index, i);
-			index = -1;
-		}
-		i++;
-	}
-	split[j] = 0;
+	split = ft_calloc(ft_countw((char *)s, c) + 1, sizeof(char *));
+	if (!split)
+		return (0);
+	if (!wordalloc(split, (char *)s, c))
+		return (0);
 	return (split);
 }
